@@ -81,10 +81,10 @@ Notes
 }
 
 body {
-	width: max(306px, 85%);
-	max-width: 60rem;
+	max-width: 1096px;
 	min-height: 100vh;
 	margin-inline: auto;
+	padding-inline: clamp(0.5rem, 5vw, 3rem);
 	font-size: var(--fs-12);
 	font-family: var(--ff-serif);
 	line-height: 1.33;
@@ -132,7 +132,7 @@ input,
 button,
 textarea,
 select {
-	/* ovrride user agent defaults by applying font values of parent element */
+	/* override user agent defaults by applying font values of parent element */
 	font: inherit;
 }
 
@@ -174,12 +174,13 @@ header {
 
 	& img.logo {
 		grid-column: 1 / 2;
+		grid-row: 1 / 2;
 		max-width: 256px;
 	}
 
 	& h2.tagline {
 		grid-column: 1 / 2;
-		grid-row: 2 / -1;
+		grid-row: 2 / 3;
 		padding-top: 0.5rem;
 		font-size: .875rem;
 		font-family: var(--ff-serif-caption);
@@ -191,14 +192,20 @@ header {
 		grid-row: 1 / 3;
 		justify-self: flex-end;
 	}
-}
 
-header::after {
-	content: "";
-	grid-column: 1 / 3;
-	grid-row: 3;
-	border-top: 1px solid black;
-	margin-top: 1.5rem;
+	& .location {
+		grid-column: 1 / -1;
+		grid-row: 3 / -1;
+		margin-block: 1.5rem;
+		padding-block: 1rem;
+		border-top: 1px solid rgba(0 0 0 / 0.2);
+		border-bottom: 1px solid rgba(0 0 0 / 0.2);
+		font-size: clamp(.6875rem, 2.89vw, .8125rem);
+		font-family: var(--ff-serif-caption);
+		text-transform: uppercase;
+		text-align: center;
+		letter-spacing: clamp(.1em, .42vw, .15em);
+	}
 }
 
 .menu-toggle {
@@ -306,22 +313,8 @@ a:active {
 
 /* main - all pages */
 main {
-	max-width: 90ch;
 	margin-inline: auto;
-}
-
-.location {
-	font-size: clamp(.6875rem, 2.89vw, .8125rem);
-	font-family: var(--ff-serif-caption);
-	text-transform: uppercase;
-	text-align: center;
-	letter-spacing: clamp(.1em, .42vw, .15em);
-	}
-
-@media (min-width: 720px) {
-	.location {
-		margin-bottom: 1rem;
-	}
+	padding-inline: clamp(0.5rem, 5vw, 3rem);
 }
 
 /* footer - all pages */
@@ -330,7 +323,7 @@ footer {
 	flex-direction: column;
 	margin-block: 3rem;
 	padding-top: 1.5rem;
-	border-top: 1px solid black;
+		border-top: 1px solid rgba(0 0 0 / 0.2);
 }
 
 footer h2 {
@@ -354,7 +347,9 @@ footer h2 {
 
 .img-about {
 	width: 100%;
+	max-width: 372px;
 	height: auto;
+	margin-inline: auto;
 	margin-bottom: 1.5rem;
 }
 
@@ -373,7 +368,8 @@ footer h2 {
 	}
 
 	.img-about {
-		margin-bottom: 0;
+		max-width: 100%;
+		margin: 0;
 	}
 }
 /* #endregion */
