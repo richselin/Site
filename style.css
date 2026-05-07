@@ -17,13 +17,14 @@ Notes
 		c. border
 	3. Typography
 		a. font-style
-		b. font-weight
-		c. font-size
-		d. font-family
-		e. text-transform
-		f. letter-spacing
-		g. line-height
-		h. alignment
+		b. font-variant
+		c. font-weight
+		d. font-size
+		e. font-family
+		f. text-transform
+		g. letter-spacing
+		h. line-height
+		i. alignment
 	4. Color
 		a. background
 		b. color
@@ -141,6 +142,7 @@ picture, img {
 	/* make images responsive */
 	max-width: 100%;
 }
+/* #endregion */
 
 /* #region === UTILITY CLASSES	=== */
 .para-style-body {
@@ -157,12 +159,13 @@ picture, img {
 /* #endregion */
 
 /* #region === LAYOUT	=== */
-/* #region header and nav - all pages */
+/* header and nav - all pages */
 header {
 	display: grid;
 	grid-template-columns: 1fr auto;
 	grid-template-rows: 1fr auto;
 	column-gap: 1rem;
+	position: sticky;
 	top: 0;
 	z-index: 100;
 	padding-top: 2rem;
@@ -302,8 +305,12 @@ a:active {
 }
 
 /* main - all pages */
+main {
+	max-width: 90ch;
+	margin-inline: auto;
+}
+
 .location {
-	margin-bottom: 1.5rem;
 	font-size: clamp(.6875rem, 2.89vw, .8125rem);
 	font-family: var(--ff-serif-caption);
 	text-transform: uppercase;
@@ -311,7 +318,34 @@ a:active {
 	letter-spacing: clamp(.1em, .42vw, .15em);
 	}
 
+@media (min-width: 720px) {
+	.location {
+		margin-bottom: 1rem;
+	}
+}
+
 /* footer - all pages */
+footer {
+	display: flex;
+	flex-direction: column;
+	margin-block: 3rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid black;
+}
+
+footer h2 {
+	font-variant: small-caps;
+	font-size: var(--fs-11);
+	font-family: var(--ff-serif-caption);
+	letter-spacing: 0.05em;
+}
+
+@media (min-width: 480px) {
+	footer {
+		flex-direction: row;
+		gap: 2rem;
+	}
+}
 
 /* #region main - About */
 .about {
@@ -332,14 +366,14 @@ a:active {
 
 @media (min-width: 720px) {
 	.about {
-		grid-template-columns: minmax(288px,1fr) 1.5fr;
+		grid-template-columns: minmax(234px,.62fr) 1fr;
 		gap: 3rem;
 		align-items: start;
+		margin-top: 3rem;
 	}
 
 	.img-about {
 		margin-bottom: 0;
 	}
 }
-
 /* #endregion */
