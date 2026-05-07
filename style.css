@@ -311,4 +311,35 @@ a:active {
 	letter-spacing: clamp(.1em, .42vw, .15em);
 	}
 
-	/* footer - all pages */
+/* footer - all pages */
+
+/* #region main - About */
+.about {
+	display: grid;
+}
+
+.img-about {
+	width: 100%;
+	height: auto;
+	margin-bottom: 1.5rem;
+}
+
+.about h1 {
+	margin-bottom: 1rem;
+	font-size: var(--fs-36);
+	font-family: var(--ff-serif-subhead);
+}
+
+@media (min-width: 720px) {
+	.about {
+		grid-template-columns: minmax(288px,1fr) 1.5fr;
+		gap: 3rem;
+		align-items: start;
+	}
+
+	.img-about {
+		margin-bottom: 0;
+	}
+}
+
+/* #endregion */
