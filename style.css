@@ -89,6 +89,7 @@ body {
 	font-family: var(--ff-serif);
 	line-height: 1.33;
 	overflow-x: hidden;
+	overflow-wrap: break-word;
 	background-color: white;
 	color: black;
 }
@@ -170,6 +171,7 @@ header {
 	z-index: 100;
 	padding-top: 2rem;
 	padding-bottom: 1.5rem;
+	border-bottom: 1px solid rgba(0 0 0 / 0.05);
 	background-color: white;
 
 	& img.logo {
@@ -184,7 +186,7 @@ header {
 		padding-top: 0.5rem;
 		font-size: .875rem;
 		font-family: var(--ff-serif-caption);
-		letter-spacing: .1em;
+		letter-spacing: .07em;
 	}
 
 	& nav {
@@ -197,7 +199,7 @@ header {
 		grid-column: 1 / -1;
 		grid-row: 3 / -1;
 		margin-block: 1.5rem;
-		padding-block: 1rem;
+		padding-block: clamp(0.25rem, 4vw, 0.75rem);
 		border-top: 1px solid rgba(0 0 0 / 0.2);
 		border-bottom: 1px solid rgba(0 0 0 / 0.2);
 		font-size: clamp(.6875rem, 2.89vw, .8125rem);
@@ -314,7 +316,7 @@ a:active {
 /* main - all pages */
 main {
 	margin-inline: auto;
-	padding-inline: clamp(0.5rem, 5vw, 3rem);
+	padding-inline: clamp(0.5rem, 2vw, 1.5rem);
 }
 
 /* footer - all pages */
