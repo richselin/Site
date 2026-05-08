@@ -26,5 +26,20 @@ navLinksAnchors.forEach(link => {
     link.addEventListener('click', () => setMenuState(false));
 });
 
+// Add sentinel to show header border-bottom when user starts scrolling
+const header = document.querySelector("header");
+const sentinel = document.createElement("div");
 
+sentinel.style.position = "absolute";
+sentinel.style.top = "0";
+document.body.prepend(sentinel);
+
+const observer = new IntersectionObserver((entries) => {
+    //If the sentinel is NOT visible, user is scrolling down
+    header.classList.toggle("is-scrolled", !entries[0].isIntersecting);
+}, {
+    threshold: [0]
+});
+
+observer.observe(sentinel);
 
