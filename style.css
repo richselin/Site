@@ -177,7 +177,7 @@ header {
 	& img.logo {
 		grid-column: 1 / 2;
 		grid-row: 1 / 2;
-		max-width: 256px;
+		max-width: 240px;
 	}
 
 	& h2.tagline {
