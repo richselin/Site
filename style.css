@@ -207,10 +207,9 @@ header {
 	align-items: start;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
-	overflow: hidden;
 	background-color: white;
 
-	& img.logo {
+	& div.logo {
 		grid-column: 1 / 2;
 		grid-row: 1 / 2;
 		max-width: 288px;
@@ -219,13 +218,13 @@ header {
 
 	& nav {
 		grid-column: 2 / 3;
-		grid-row: 1 / 3;
+		grid-row: 1 / 2;
 		justify-self: flex-end;
 	}
 
 	& .subheader {
 		grid-column: 1 / -1;
-		grid-row: 3 / -1;
+		grid-row: 2 / -1;
 		margin-top: 1.5rem;
 		padding-block: clamp(0.25rem, 4vw, 0.75rem);
 		border-top: 1px solid rgba(0 0 0 / 0.2);
@@ -264,7 +263,7 @@ header.is-scrolled::before {
 	text-transform: uppercase;
 	letter-spacing: clamp(.1em, .42vw, .15em);
 	white-space: nowrap;
-	overflow: hidden;
+	/* overflow: hidden; */
 	text-overflow: ellipsis;
 }
 
@@ -377,10 +376,6 @@ a:active {
 	/* Hide hamburger menu and fly-out menu-close X */
 	.menu-toggle, .menu-close {
 		display: none;
-	}
-
-	.separator {
-		margin-block: 0;
 	}
 }
 
