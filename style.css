@@ -214,9 +214,10 @@ header {
 	z-index: 9999;
 	align-items: start;
 	padding-top: 2rem;
-	padding-bottom: 2rem;
-	border-bottom: 1px solid rgb(128 128 128);
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid rgb(0 0 0 / 0.5);
 	background-color: white;
+	overflow: visible;
 
 	& div.logo {
 		grid-column: 1 / 2;
@@ -244,11 +245,11 @@ header.is-scrolled {
 }
 
 .subheader {
-	padding-block: clamp(0.25rem, 4vw, 0.75rem);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin-block: 2rem;
 
 		@media (min-width: 720px) {
 			flex-direction: row;
