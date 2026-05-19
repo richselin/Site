@@ -290,6 +290,9 @@ header.is-scrolled::before {
 }
 
 .nav-links a {
+	/* recommended minimum size for interactive touch elements */
+	min-width: 44px;
+	min-height: 44px;
 	padding: 1rem;
 	font-family: var(--ff-sans);
 	font-size: var(--fs-10);
@@ -321,9 +324,9 @@ a:active {
 	color: var(--clr-tetrad);
 }
 
-.menu-toggle {
+.menu-mobile-hamburger {
 	display: block;
-	width: 2rem;
+	width: 44px;
 	aspect-ratio: 1;
 	align-self: self-start;
 	margin-top: -6px;
@@ -374,7 +377,7 @@ a:active {
 	}
 
 	/* Hide hamburger menu and fly-out menu-close X */
-	.menu-toggle, .menu-close {
+	.menu-mobile-hamburger, .menu-close {
 		display: none;
 	}
 }

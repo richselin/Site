@@ -1,4 +1,4 @@
-const menuToggle = document.querySelector('.menu-toggle');
+const menuToggle = document.querySelector('.menu-mobile-hamburger');
 const menuClose = document.querySelector('.menu-close');
 const navLinks = document.querySelector('.nav-links');
 const navLinksAnchors = document.querySelectorAll('.nav-links a');
