@@ -30,9 +30,8 @@ navLinksAnchors.forEach(link => {
 const header = document.querySelector("header");
 const sentinel = document.createElement("div");
 
-sentinel.style.position = "absolute";
-sentinel.style.top = "0";
-document.body.prepend(sentinel);
+sentinel.className = "scroll-sentinel";
+header.insertAdjacentElement("afterend", sentinel);
 
 const observer = new IntersectionObserver((entries) => {
     //If the sentinel is NOT visible, user is scrolling down

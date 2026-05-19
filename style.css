@@ -29,6 +29,14 @@ Notes
 	4. Color
 		a. background
 		b. color
+
+	Tap target size guidelines
+		1. min-width: and min-height: 44px
+		2. Minimum spacing between targets
+			a. 4-6px: dense UI minimum
+			b. 8-12px: minimum
+			c. 12-16px: comfortable mobile UI
+		3. Expand target size with 12-16px padding
 */
 
 /* #region === CUSTOM PROPERTIES (CSS Variables)	=== */
@@ -97,7 +105,6 @@ body {
 	font-size: var(--fs-12);
 	font-family: var(--ff-serif);
 	line-height: 1.33;
-	overflow-x: hidden;
 	/* avoid text overflows */
 	overflow-wrap: break-word;
 	background-color: white;
@@ -203,10 +210,12 @@ header {
 	column-gap: 1rem;
 	position: sticky;
 	top: 0;
-	z-index: 100;
+	width: 100%;
+	z-index: 9999;
 	align-items: start;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
+	border-bottom: 1px solid rgb(128 128 128);
 	background-color: white;
 
 	& div.logo {
@@ -221,40 +230,31 @@ header {
 		grid-row: 1 / 2;
 		justify-self: flex-end;
 	}
+}
 
-	& .subheader {
-		grid-column: 1 / -1;
-		grid-row: 2 / -1;
-		margin-top: 1.5rem;
-		padding-block: clamp(0.25rem, 4vw, 0.75rem);
-		border-top: 1px solid rgba(0 0 0 / 0.2);
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+header.is-scrolled {
+	transition: box-shadow 200ms ease;
+}
+
+.scroll-sentinel {
+	position: absolute;
+	top: 0;
+	height: 1px;
+	width: 100%;
+}
+
+.subheader {
+	padding-block: clamp(0.25rem, 4vw, 0.75rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
 		@media (min-width: 720px) {
 			flex-direction: row;
 			gap: 1.25em;
 		}
 	}
-}
-
-header::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	right: 0;
-	height: 1px;
-	bottom: 2rem;
-	background-color: rgba(0 0 0 / 0.2);
-	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-	pointer-events: none;
-}
-
-header.is-scrolled::before {
-	transform: translateY(clamp(1rem, 3vw, 2rem));
-}
 
 .subheader > p {
 	margin: 0;
@@ -277,7 +277,7 @@ header.is-scrolled::before {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 1rem;
+	gap: 16px;
 	position: fixed;
 	top: 0;
 	right: -100%;
@@ -290,10 +290,10 @@ header.is-scrolled::before {
 }
 
 .nav-links a {
-	/* recommended minimum size for interactive touch elements */
 	min-width: 44px;
 	min-height: 44px;
-	padding: 1rem;
+	padding-inline: 12px;
+	padding-block: 16px;
 	font-family: var(--ff-sans);
 	font-size: var(--fs-10);
 	text-decoration: none;
@@ -330,6 +330,7 @@ a:active {
 	aspect-ratio: 1;
 	align-self: self-start;
 	margin-top: -6px;
+	padding-inline: 16px;
 	border: none;
 	background: none;
 	background-image: url(Assets/bars-solid-full.svg);
@@ -482,3 +483,9 @@ footer h2 {
 	}
 }
 /* #endregion */
+
+/* #region === COMPONENTS === */
+.btn {
+	min-width: 44px;
+	min-height: 44px;
+}
