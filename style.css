@@ -101,10 +101,10 @@ body {
 	max-width: 1096px;
 	min-height: 100vh;
 	margin-inline: auto;
-	padding-inline: clamp(0.5rem, 5vw, 3rem);
+	padding-inline: 5%;
 	font-size: var(--fs-12);
-	font-family: var(--ff-serif);
-	line-height: 1.33;
+	font-family: var(--ff-sans);
+	line-height: 1.15;
 	/* avoid text overflows */
 	overflow-wrap: break-word;
 	background-color: white;
@@ -384,12 +384,6 @@ a:active {
 	}
 }
 
-/* main */
-main {
-	margin-inline: auto;
-	padding-inline: clamp(0.5rem, 2vw, 1.5rem);
-}
-
 /* footer */
 footer {
 	display: flex;
@@ -414,6 +408,44 @@ footer h2 {
 }
 
 /* #region === PAGE-SPECIFIC LAYOUT === */
+/* "Main" page layout */
+.hero {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 0.9fr 1fr;
+	row-gap: 5rem;
+
+	& .hero-img {
+		grid-column: 1 / -1;
+		grid-row: 1 / -1;
+		/* outline: 3px solid red; */
+	}
+
+	& .hero-text {
+		grid-column: 2 / -1;
+		grid-row: 1 / 2;
+		padding-top: 1rem;
+		padding-right: 0.5rem;
+		/* outline: 3px solid blue; */
+	}
+
+		& .hero-buttons {
+		grid-column: 1 / -1;
+		grid-row: 2 / 3;
+		/* outline: 3px solid magenta; */
+	}
+}
+
+h1.hero-heading {
+ margin-bottom: 0.5rem;
+	font-size: clamp(1.25rem, 6.25vw, 2rem);
+	font-family: var(--ff-serif);
+}
+
+p.hero-body {
+	font-size: clamp(.875rem, 4.375vw, 1.75rem);
+}
+
 /* "Treatments" page layout */
 .treatment-section {
 	margin-bottom: 4rem;
