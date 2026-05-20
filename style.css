@@ -1,12 +1,18 @@
-/* === TABLE OF CONTENTS ===
-	1. Custom Properties (CSS Variables)
-	2. Reset and global styles
-	3. Utility classes
-	4. Global layout
-	5. Page-specific layout
-	6. Components
+/* 
+TABLE OF CONTENTS
+=================
+	Notes	
+	Custom Properties (CSS Variables)
+	Reset and global styles
+	Utility classes
+	Global layout
+	Page-specific layout
+	Components
+*/
 
-Notes 
+/*
+NOTES
+=====
 	CSS rule hierarchy - from the outside in
 	1. Layout and positioning
 		a. display (grid/flexbox) and position (absolute, relative, sticky, etc.)
@@ -31,15 +37,19 @@ Notes
 		b. color
 
 	Tap target size guidelines
-		1. min-width: and min-height: 44px
-		2. Minimum spacing between targets
-			a. 4-6px: dense UI minimum
-			b. 8-12px: minimum
-			c. 12-16px: comfortable mobile UI
-		3. Expand target size with 12-16px padding
+	1. min-width: and min-height: 44px
+	2. Minimum spacing between targets
+		a. 4-6px: dense UI minimum
+		b. 8-12px: minimum
+		c. 12-16px: comfortable mobile UI
+	3. Expand target size with 12-16px padding
 */
 
-/* #region === CUSTOM PROPERTIES (CSS Variables)	=== */
+/*
+CUSTOM PROPERTIES (CSS Variables)
+=================================
+*/
+
 :root {
 	/* typography */
 	--fw-light: 300;
@@ -77,25 +87,113 @@ Notes
 	--clr-tetrad: #b40987;
 
 }
-/* #endregion */
 
-/* #region === RESET AND GLOBAL STYLES === */
+/*
+NORMALIZE USER AGENT STYLESHEET
+===============================
+*/
+
+/* 
+Document
+--------
+ */
+
+/**
+Implement alternative box model.
+*/
+
 *,
 *::before,
 *::after {
-	/* remove user agent margins and padding */
-	margin: 0;
-	padding: 0;
-	/* implement alternative box model */
 	box-sizing: border-box;
 }
 
+/**
+1. Improve consistency of default fonts in all browsers.
+2. Correct line height in all browsers.
+3. Prevent adjustments of font size after orientation changes in iOS.
+4. Use a more readable tab size.
+*/
+
 html {
-	/* prevent iOS font-size inflation and horizontal scroll */
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-  overflow-x: hidden;
+	font-family: 
+		system-ui,
+		'Segoe UI',
+		Roboto,
+		'Helvetica',
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji'; /* 1 */
+	line-height: 1.15; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+	tab-size: 4; /* 4 */
 }
+
+/* 
+Sections
+--------
+ */
+
+ /**
+Remove the margin in all browsers.
+*/
+body {
+	margin: 0;
+}
+
+/* 
+Text-level semantics
+--------------------
+ */
+
+/**
+Add the correct font weight in Chrome and Safari.
+*/
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+1. Improve consistency of monospace default fonts in all browsers.
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+	font-family:
+		ui-monospace,
+		SFMono-Regular,
+		Consolas,
+		'Liberation Mono',
+		Menlo,
+		monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+
+small {
+	font-size: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 body {
 	max-width: 1096px;
@@ -422,60 +520,68 @@ footer h2 {
 /* "Main" page layout */
 .hero {
 	display: grid;
-	grid-template-columns: 0.5fr 1fr;
-	grid-template-rows: 1fr 1fr;
-	row-gap: 5rem;
+	grid-template-columns: 0.55fr 1fr;
+	grid-template-rows: 0.75fr 0.4fr 1fr;
 
 	& .hero-img {
 		grid-column: 1 / -1;
 		grid-row: 1 / -1;
-		/* outline: 3px solid red; */
+		/* outline: 1px solid red; */
 	}
 
 	& .hero-text {
 		grid-column: 2 / -1;
 		grid-row: 1 / 2;
-		padding-top: 1rem;
-		padding-right: 0.5rem;
-		/* outline: 3px solid blue; */
+		padding-top: clamp(0.5rem, 2.5vw, .875rem);
+		padding-right: clamp(0.5rem, 2.5vw, .875rem);
+		/* outline: 1px solid blue; */
 	}
 
 	& .hero-buttons {
 		grid-column: 1 / -1;
-		grid-row: 2 / 3;
+		grid-row: 3 / 4;
 		margin-inline: 1rem;
-		/* outline: 3px solid magenta; */
+		/* outline: 1px solid magenta; */
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: min-content;
+		grid-template-rows: 1fr 1fr;
 		gap: 1rem;
 
 		& a:first-child {
 			grid-column: 1 / -1;
 			grid-row: 1 / 2;
+			justify-self: right;
+			align-self: self-end;
+			margin-bottom: clamp(0.5rem, 2.5vw, .875rem);
 		}
 
 		& a:nth-child(2) {
 			grid-column: 1 / 2;
 			grid-row: 2 / 3;
+			justify-self: center;
+			align-self: self-start;
+			margin-top: clamp(0.5rem, 2.5vw, .875rem);
 		}
 
 		& a:last-child {
 			grid-column: 2 / -1;
 			grid-row: 2 / 3;
+			justify-self: center;
+			align-self: self-start;
+			margin-top: clamp(0.5rem, 2.5vw, .875rem);
 		}
 
 	}
 }
 
 h1.hero-heading {
- margin-bottom: 0.5rem;
-	font-size: clamp(1.25rem, 6.25vw, 2rem);
+ margin-bottom: clamp(0.5rem, 2.5vw, .875rem);
+	font-size: clamp(1.25rem, 6.25vw, 3rem);
 	font-family: var(--ff-serif);
 }
 
 p.hero-body {
-	font-size: clamp(.875rem, 4.375vw, 1.75rem);
+	font-size: clamp(.875rem, 4.375vw, 2rem);
 }
 
 
@@ -551,17 +657,20 @@ p.hero-body {
 /* #endregion */
 
 /* #region === COMPONENTS === */
-.btn {
+a.btn {
 	display: flex;
-	min-width: 44px;
-	min-height: 44px;
-	justify-self: center;
-	align-self: center;
-	padding-block: 0.5rem;
-	padding-inline: 1rem;
-	border: 3px solid var(--clr-primary);
-	border-radius: 2rem;
+	width: clamp(96px, 30vw, 168px);
+	justify-content: center;
+	align-items: center;
+	border: 2px solid var(--clr-primary);
+	border-radius: 0.5rem;
+	padding-inline: 0;
+	padding-block: clamp(0.5rem, 2.5vw, .875rem);
+	font-size: clamp(.625rem, 3.125vw, 1.09375rem);
 	text-align: center;
-	
 	background-color: white;
+}
+
+a.btn.cta {
+		width: clamp(132px, 41.25vw, 231px);
 }
