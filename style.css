@@ -121,6 +121,7 @@ GLOBAL STYLES
 
 /* Prevent font size inflation when iPhone changes orientation */
 html {
+	scroll-padding-top: 134px;
 	-moz-text-size-adjust: none;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
@@ -564,25 +565,61 @@ p.hero-body {
 }
 
 
+/*
+COMPONENTS
+==========
+*/
 
+.treatment-section {
+	margin-bottom: clamp(1.5rem, 7.5vw, 3rem);
+}
 
+.treatment-section > *:not(:first-child, :last-child) {
+	margin-block-end: clamp(1rem, 5vw, 2rem);
+}
 
+.treatment-section > *:first-child {
+	margin-bottom: clamp(0.5rem, 2.5vw, 1rem);
+	font-weight: var(--fw-bold);
+	font-size: clamp(1.5rem, 7.5vw, 2rem);
+	font-family: var(--ff-serif-subhead);
+	letter-spacing: .03em;
+	line-height: 1;
+}
 
+.treatment-item > *:not(:last-child) {
+	margin-block-end: clamp(0.5rem, 2.5vw, 1rem);
+}
 
+.treatment-item > *:first-child {
+	font-weight: var(--fw-bold);
+	font-size: clamp(1.25rem, 6.25vw, 1.5rem);
+	line-height: 1;
+}
 
-
+.treatment-item em {
+	font-weight: var(--fw-bold);
+	letter-spacing: .03em;
+	color: teal;
+}
 
 /*
 CUSTOM LAYOUTS AND STYLES
 =====================
 */
 
+
+
+
+
+
 /*
 "Treatments" page
 -------------------
- */
-main {
-	max-width: 640px;
+*/
+
+ .treatment {
+	max-width: 40rem;
 	margin-inline: auto;
 }
 
@@ -624,39 +661,6 @@ main {
 	}
 }
 
-.treatment-section {
-	margin-bottom: clamp(1.5rem, 7.5vw, 3rem);
-
-	& h3 {
-		margin-bottom: clamp(0.5rem, 2.5vw, 1rem);
-		font-weight: var(--fw-bold);
-		font-size: clamp(1.5rem, 7.5vw, 2rem);
-		font-family: var(--ff-serif-subhead);
-		letter-spacing: .03em;
-		line-height: 1;
-	}
-}
-
-.treatment-section > *:not(h3, :last-child) {
-	margin-block-end: clamp(1rem, 5vw, 2rem);
-}
-
-.treatment-item > *:not(:last-child) {
-	margin-block-end: clamp(0.5rem, 2.5vw, 1rem);
-}
-
-.treatment-item h4 {
-	font-weight: var(--fw-bold);
-	font-size: clamp(1.25rem, 6.25vw, 1.5rem);
-	line-height: 1;
-}
-
-.treatment-item em {
-	font-weight: var(--fw-bold);
-	letter-spacing: .03em;
-	color: teal;
-}
-
 .treatment-cta h2 {
 	font-size: clamp(2rem, 10vw, 3rem);
 	line-height: 1;
@@ -667,8 +671,8 @@ main {
 }
 
 /*
-"About" page layout
--------------------
+"About" page
+------------
  */
 
 .about {
