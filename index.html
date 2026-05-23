@@ -55,30 +55,40 @@
 		</div>
 
 		<section class="hero">
-			<picture class="hero-img">
+
+			<picture>
 				<source
-					media="(min-width: 433px)"
-					srcset="Images/SDE-square.jpg">
-				<img src="Images/SDE-portrait.jpg" alt="Sonya Dilbeck, an esthetician, is seated on a stool
-					behind her treatment table. Behind her is a counter that displays some of her treatment
-					products and a blue Circadia promotional plaque.">
+					width="980"
+					height="653"
+					media="(min-width: 640px)"
+					srcset="Images/Sonya_studio_landscape_980w.jpg">
+				<img
+					loading="lazy"
+					width="576"
+					height="720"
+					sizes="auto"
+					srcset="
+						Images/Sonya_studio_portrait_576w-2x.jpg 2x,
+						Images/Sonya_studio_portrait_576w-3x.jpg 3x
+					"
+					src="Images/Sonya_studio_portrait_576w.jpg"
+					alt="Sonya Dilbeck, an esthetician, is seated on a stool
+						behind her treatment table. Behind her is a counter that displays some of her treatment
+						 products and a blue Circadia promotional plaque.">
 			</picture>
-			<div class="hero-text">
-				<h1 class="hero-heading"><span class="no-break">Results-driven</span> skincare for aging and
-				 sensitive skin.</h1>
-				<p class="hero-body">My focus is on supporting your <span class="no-break">long-term</span> skin
-				 health.</p>
-			</div>
-			
+			<h1><span class="no-break">Results-driven</span> skincare for aging and
+				sensitive skin.</h1>		
 			<div class="hero-buttons">
-				<a class="cta btn" href="#first-time">First-Time Clients<br/>Start Here</a>
+				<a class="btn cta" href="#first-time">First-Time Clients<br/> Start Here</a>
 				<a class="btn" href="treatments.html">View<br/>Treatments</a>
 				<a class="btn" href="#">Book<br/>Online</a>
 			</div>
 		</section>
 		
-		<section id="trust" class="trust">
+		<section class="trust">
 			<h2>Not a one-time facial. A long-term plan.</h2>
+			<p>My focus is on supporting your <span class="no-break">long-term</span> skin
+				health.</p>
 			<p>Each treatment is customized based on your skin's condition that day and designed to build results
 				over time—not just temporary improvement.
 			</p>
