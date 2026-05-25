@@ -15,15 +15,57 @@ TABLE OF CONTENTS
 
 
 /*
+NOTES
+=====
+	CSS rule hierarchy - from the outside in
+	1. Layout and positioning
+		a. display (grid/flexbox) and position (absolute, relative, sticky, etc.)
+		b. item/content alignment and justification or top/bottom/left/right
+		c. z-index
+	2. Box model
+		a. margin
+		b. padding
+		c. border
+	3. Typography
+		a. font-style
+		b. font-variant
+		c. font-weight
+		d. font-size
+		e. font-family
+		f. text-transform
+		g. letter-spacing
+		h. line-height
+		i. alignment
+	4. Color
+		a. color
+		b. background
+
+	Tap target size guidelines
+	1. min-width: and min-height: 44px
+	2. Minimum spacing between targets
+		a. 4-6px: dense UI minimum
+		b. 8-12px: minimum
+		c. 12-16px: comfortable mobile UI
+	3. Expand target size with 12-16px padding
+*/
+
+
+/*
 CUSTOM PROPERTIES (CSS Variables)
 =================================
 */
 :root {
+	--fw-regular: 400;
 	--fw-medium: 500;
+
+	--ff-serif: garamond-premier-pro, garamond, georgia, serif;
 
 	--gap-var-05: clamp(0.5rem, 2.5vw, 1rem);
 	--gap-var-15: clamp(1.5rem, 7.5vw, 3rem);
 	--gap-var-30: clamp(2.25rem, 11.25vw, 4.5rem);
+
+	--size-var-100_125: clamp(1rem, 5vw, 1.25rem);
+	--size-var-125_15625: clamp(1.25rem, 6.25vw, 1.5625rem);
 }
 
 
@@ -31,6 +73,40 @@ CUSTOM PROPERTIES (CSS Variables)
 GLOBAL ELEMENT STYLES
 =====================
 */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+*:not(dialog) {
+	margin: 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
+
+html {
+	scroll-padding-top: 134px;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+body {
+	max-width: 1088px;
+	min-height: 100vh;
+	margin-inline: auto;
+	padding-inline: 5%;
+	font-weight: var(--fw-regular);
+	font-size: var(--size-var-100_125);
+	font-family: var(--ff-sans);
+	line-height: 1.33;
+	text-wrap: pretty;
+	-webkit-font-smoothing: antialiased;
+	color: black;
+	background-color: white;
+}
 
 p,
 h6,
@@ -52,10 +128,28 @@ h1 {
 	text-wrap: balance;
 }
 
-p {
-	font-size: clamp(1rem, 5vw, 1.25rem);
-	line-height: 1.33;
-	text-wrap: pretty;
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+canvas,
+img,
+picture,
+svg,
+video {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Remove list styles while retaining semantics for Apple VoiceOver; must add role in HTML */
+dl[role='list'],
+ol[role='list'],
+ul[role='list'] {
+	list-style: none;
 }
 
 
@@ -63,18 +157,23 @@ p {
 UTILITIES (style in HTML document)
 ==========================================================
 */
+
 .fw-medium { font-weight: var(--fw-medium); }
 
-.no-break {
-	white-space: nowrap;
-}
+.fs-125_15625 { font-size: var(--size-var-125_15625); }
+
+
+.ff-serif { font-family: var(--ff-serif); }
+
+.no-break { white-space: nowrap; }
 
 
 /*
 COMPONENTS (style in CSS)
 =======================================
 */
-.flex-wrapper {
+
+.flex {
 	display: flex;
 	flex-direction: column;
 	gap: var(--gap-var-05);
@@ -202,75 +301,6 @@ PAGE-SPECIFIC LAYOUTS AND STYLES
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-NOTES
-=====
-	CSS rule hierarchy - from the outside in
-	1. Layout and positioning
-		a. display (grid/flexbox) and position (absolute, relative, sticky, etc.)
-		b. item/content alignment and justification or top/bottom/left/right
-		c. z-index
-	2. Box model
-		a. margin
-		b. padding
-		c. border
-	3. Typography
-		a. font-style
-		b. font-variant
-		c. font-weight
-		d. font-size
-		e. font-family
-		f. text-transform
-		g. letter-spacing
-		h. line-height
-		i. alignment
-	4. Color
-		a. background
-		b. color
-
-	Tap target size guidelines
-	1. min-width: and min-height: 44px
-	2. Minimum spacing between targets
-		a. 4-6px: dense UI minimum
-		b. 8-12px: minimum
-		c. 12-16px: comfortable mobile UI
-	3. Expand target size with 12-16px padding
-*/
-
 /*
 CUSTOM PROPERTIES (CSS Variables)
 =================================
@@ -278,7 +308,6 @@ CUSTOM PROPERTIES (CSS Variables)
 
 :root {
 	--fw-light: 300;
-	--fw-regular: 400;
 	--fw-semibold: 600;
 	--fw-bold: 700;
 	--fw-extrabold: 800;
@@ -295,7 +324,6 @@ CUSTOM PROPERTIES (CSS Variables)
 	--fs-48: 4rem;
 	--fs-72: 6rem;
 
-	--ff-serif: garamond-premier-pro, garamond, georgia, serif;
 	--ff-serif-caption: garamond-premier-pro-caption, garamond, georgia, serif;
 	--ff-serif-subhead: garamond-premier-pro-subhead, garamond, georgia, serif;
 	--ff-serif-display: garamond-premier-pro-display, garamond, georgia, serif;
@@ -310,93 +338,6 @@ CUSTOM PROPERTIES (CSS Variables)
 
 	--clr-tetrad: #b40987;
 
-}
-
-
-
-
-/*
-GLOBAL STYLES
-===============================
-*/
-
-/* Implement alternative box model */
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-/* Remove default margin */
-*:not(dialog) {
-	margin: 0;
-	margin-block-start: 0;
-	margin-block-end: 0;
-}
-
-/* Prevent font size inflation when iPhone changes orientation */
-html {
-	scroll-padding-top: 134px;
-	-moz-text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-	text-size-adjust: none;
-}
-
-body {
-	max-width: 1088px;
-
-	/* Ensure body fills full height of screen */
-	min-height: 100vh;
-
-	margin-inline: auto;
-	padding-inline: 5%;
-
-	font-weight: var(--fw-regular);
-	font-size: var(--fs-10);
-	font-family: var(--ff-sans);
-
-	/* Increase line height to default for accessibility zoom; use for initial styling, then override */
-	line-height: 1.5;
-
-	/* Improve text rendering on MacOS by reducing effective font weight */
-	-webkit-font-smoothing: antialiased;
-
-	background-color: white;
-	color: black;
-}
-
-/* Avoid text overflows */
-
-
-
-
-
-
-/* Make images block elements and prevent overflow */
-canvas,
-img,
-picture,
-svg,
-video {
-	display: block;
-	max-width: 100%;
-	height: auto;
-}
-
-/* Inherit fonts for form controls */
-button,
-input,
-select,
-textarea {
-	font: inherit;
-}
-
-
-/* Remove list styles while retaining semantics for Apple VoiceOver; must add role in HTML */
-dl[role='list'],
-ol[role='list'],
-ul[role='list'] {
-	list-style: none;
 }
 
 
@@ -633,39 +574,10 @@ a:active {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 BASE STYLES
 =============
 */
-
-
 
 .btn {
 	display: flex;
@@ -792,4 +704,3 @@ PAGE-SPECIFIC LAYOUTS AND STYLES
 		margin-block-end: clamp(0.5rem, 2.5vw, 1rem);
 	}
 }
-
