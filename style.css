@@ -346,19 +346,6 @@ CUSTOM PAGE LAYOUTS
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 CUSTOM PROPERTIES
 =================
@@ -380,14 +367,7 @@ CUSTOM PROPERTIES
 
 	--ff-serif: garamond-premier-pro, garamond, georgia, serif;
 
-
-
-
-
 	/* === !CSS CHECKED TO HERE! === */
-
-
-
 
 	--rem-050_125x: clamp(0.5rem, 2.5vw, 0.625rem);
 	--rem-100_125x: clamp(1rem, 5vw, 1.25rem);
@@ -399,69 +379,7 @@ CUSTOM PROPERTIES
 	--rem-150_2x: clamp(1.5rem, 7.5vw, 3rem);
 	--rem-225_2x: clamp(2.25rem, 11.25vw, 4.5rem);
 
-
-
-
-
-	
-
-
-
-
-
-
 }
-
-
-/*
-GLOBAL ELEMENT STYLES
-=====================
-*/
-
-
-
-
-
-
-/*
-UTILITIES (style in HTML document)
-==========================================================
-*/
-
-
-
-.fs-125_125x { font-size: var(--rem-125_125x); }
-
-
-.ff-serif { font-family: var(--ff-serif); }
-
-
-
-
-/*
-COMPONENTS (style in CSS)
-=======================================
-*/
-
-
-
-.heading-1_01 {
-	font-weight: var(--fw-medium);
-	font-size: clamp(2rem, 10vw, 4rem);
-	font-family: var(--ff-serif-subhead);
-	line-height: 1;
-}
-
-
-/*
-PAGE-SPECIFIC LAYOUTS AND STYLES
-================================
-*/
-
-/*
-"About" page
-------------
- */
 
 
 
@@ -782,14 +700,3 @@ address p {
 		gap: 2rem;
 	}
 }
-
-
-/*
-PAGE-SPECIFIC LAYOUTS AND STYLES
-================================
-*/
-
-/*
-"Home" page
------------
-*/
