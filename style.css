@@ -51,25 +51,6 @@ NOTES
 
 
 /*
-CUSTOM PROPERTIES (CSS Variables)
-=================================
-*/
-:root {
-	--fw-regular: 400;
-	--fw-medium: 500;
-
-	--ff-serif: garamond-premier-pro, garamond, georgia, serif;
-
-	--gap-var-05: clamp(0.5rem, 2.5vw, 1rem);
-	--gap-var-15: clamp(1.5rem, 7.5vw, 3rem);
-	--gap-var-30: clamp(2.25rem, 11.25vw, 4.5rem);
-
-	--size-var-100_125: clamp(1rem, 5vw, 1.25rem);
-	--size-var-125_15625: clamp(1.25rem, 6.25vw, 1.5625rem);
-}
-
-
-/*
 GLOBAL ELEMENT STYLES
 =====================
 */
@@ -98,9 +79,9 @@ body {
 	min-height: 100vh;
 	margin-inline: auto;
 	padding-inline: 5%;
-	font-weight: var(--fw-regular);
-	font-size: var(--size-var-100_125);
-	font-family: var(--ff-sans);
+	font-weight: 400;
+	font-size: 1.25rem;
+	font-family: akzidenz-grotesk-next-pro, arial, tahoma, sans-serif;
 	line-height: 1.33;
 	text-wrap: pretty;
 	-webkit-font-smoothing: antialiased;
@@ -124,7 +105,7 @@ h4,
 h3,
 h2,
 h1 {
-	font-family: var(--ff-serif);
+	font-family: garamond-premier-pro, garamond, georgia, serif;
 	text-wrap: balance;
 }
 
@@ -153,6 +134,95 @@ ul[role='list'] {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+CUSTOM PROPERTIES (CSS Variables)
+=================================
+*/
+:root {
+	--fw-regular: 400;
+	--fw-medium: 500;
+
+	--fs-sans: clamp(1rem, 5vw, 1.25rem);
+
+	--fs-11: clamp(1.125vw, 5.625vw, 1.40625rem)
+	--fs-12: clamp(1.25rem);
+	--fs-14: 1.5rem;
+	--fs-18: 1.875rem;
+	--fs-24: 2.5rem;
+	--fs-36: 3rem;
+	--fs-48: 4rem;
+	--fs-72: 6rem;
+
+	--ff-serif: garamond-premier-pro, garamond, georgia, serif;
+
+
+
+
+
+	/* === !CSS CHECKED TO HERE! === */
+
+
+
+
+	--rem-050_125x: clamp(0.5rem, 2.5vw, 0.625rem);
+	--rem-100_125x: clamp(1rem, 5vw, 1.25rem);
+	--rem-150_125x: clamp(1.5rem, 7.5vw, 1.875rem);
+	--rem-200_125x: clamp(2rem, 10vw, 2.5rem);
+
+	--rem-050_2x: clamp(0.5rem, 2.5vw, 1rem);
+	--rem-100_2x: clamp(1rem, 5vw, 2rem);
+	--rem-150_2x: clamp(1.5rem, 7.5vw, 3rem);
+	--rem-225_2x: clamp(2.25rem, 11.25vw, 4.5rem);
+
+
+
+
+
+	
+
+
+
+
+
+
+}
+
+
+/*
+GLOBAL ELEMENT STYLES
+=====================
+*/
+
+
+
+
+
+
 /*
 UTILITIES (style in HTML document)
 ==========================================================
@@ -160,7 +230,7 @@ UTILITIES (style in HTML document)
 
 .fw-medium { font-weight: var(--fw-medium); }
 
-.fs-125_15625 { font-size: var(--size-var-125_15625); }
+.fs-125_125x { font-size: var(--rem-125_125x); }
 
 
 .ff-serif { font-family: var(--ff-serif); }
@@ -176,7 +246,7 @@ COMPONENTS (style in CSS)
 .flex {
 	display: flex;
 	flex-direction: column;
-	gap: var(--gap-var-05);
+	gap: var(--rem-050_125x);
 }
 
 .heading-1_01 {
@@ -193,11 +263,26 @@ COMPONENTS (style in CSS)
 	line-height: 1;
 }
 
+.heading-3_01 {
+	margin-bottom: var(--rem-050_125x);
+	font-weight: var(--fw-medium);
+	font-size: var(--rem-20_125x);
+	font-family: var(--ff-serif-subhead);
+	letter-spacing: .03em;
+	line-height: 1;
+}
+
+.heading-4_01 {
+	font-weight: var(--fw-medium);
+	font-size: var(--rem-15_125x);
+	line-height: 1;
+}
+
 .menu-title {
 	display: flex;
-	column-gap: clamp(0.5rem, 2.5vw, 1rem);
+	column-gap: var(--rem-050_2x);
 	margin-block-start: clamp(2rem, 10vw, 4rem);
-	margin-block-end: clamp(1rem, 5vw, 2rem);
+	margin-block-end: var(--rem-100_2x);
 
 	& h2 {
 		font-weight: var(--fw-medium);
@@ -226,16 +311,6 @@ COMPONENTS (style in CSS)
 	font-family: var(--ff-serif-subhead);
 	letter-spacing: .03em;
 	line-height: 1;
-}
-
-.trtmnt-crd__hdg {
-	font-weight: var(--fw-bold);
-	font-size: clamp(1.25rem, 6.25vw, 1.5rem);
-	line-height: 1;
-}
-
-.trtmnt-crd__price {
-	font-weight: var(--fw-medium);
 }
 
 .food-allergy-warning {
@@ -313,16 +388,7 @@ CUSTOM PROPERTIES (CSS Variables)
 	--fw-extrabold: 800;
 	--fw-black: 900;
 
-	--fs-08: .875rem;
-	--fs-10: 1rem;
-	--fs-11: 1.125rem;
-	--fs-12: 1.25rem;
-	--fs-14: 1.5rem;
-	--fs-18: 1.875rem;
-	--fs-24: 2.5rem;
-	--fs-36: 3rem;
-	--fs-48: 4rem;
-	--fs-72: 6rem;
+	
 
 	--ff-serif-caption: garamond-premier-pro-caption, garamond, georgia, serif;
 	--ff-serif-subhead: garamond-premier-pro-subhead, garamond, georgia, serif;
