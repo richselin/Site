@@ -110,7 +110,14 @@ h4,
 h3,
 h2,
 h1 {
+	font-weight: 400;
 	font-family: var(--ff-serif);
+}
+
+h2 {
+	font-weight: 500;
+	font-size: clamp(2rem, 10vw, 2.5rem);
+	line-height: 1;
 }
 
 button,
@@ -143,6 +150,11 @@ UTILITIES (style in HTML document)
 ==================================
 */
 
+.mrgn-block-end_01 { margin-block-end: 1rem; }
+
+.no-break { white-space: nowrap; }
+
+
 /*
 COMPONENTS (style in CSS)
 =========================
@@ -154,34 +166,31 @@ COMPONENTS (style in CSS)
 	gap: 0.5rem;
 }
 
-.hdg-style-1 {
+.h1-style_01 {
 	font-weight: 500;
 	font-size: clamp(2rem, 10vw, 3rem);
 	line-height: 1;
 }
 
-.hdg-style-2 {
-	margin-bottom: 1rem;
-	font-weight: 500;
-	font-size: 2.5rem;
-	line-height: 1;
-}
-
-.hdg-style-3 {
-	margin-bottom: 1rem;
+.h1-style_02 {
 	font-weight: 500;
 	font-size: 3rem;
 	line-height: 1;
 }
 
-.heading-3_01 {
-	margin-bottom: 1rem;
+.h1-style_03 {
+	font-weight: 500;
+	font-size: clamp(1.5rem, 7.5vw, 3rem);
+	line-height: 1;
+}
+
+.h3-style_01 {
 	font-weight: 500;
 	font-size: 1.75rem;
 	line-height: 1;
 }
 
-.heading-4_01 {
+.h4-style_01 {
 	font-weight: 500;
 	font-size: 1.5rem;
 	line-height: 1;
@@ -222,10 +231,109 @@ CUSTOM PAGE LAYOUTS
 ===================
 */
 
+.about {
+	display: grid;
+
+	& .about-img {
+		width: 100%;
+		max-width: 372px;
+		height: auto;
+		margin-inline: auto;
+		margin-block-end: 2rem;
+	}
+
+	& h1 {
+		text-align: center;
+	}
+}
+
+@media (min-width: 720px) {
+	.about {
+		grid-template-columns: minmax(234px,.62fr) 1fr;
+		gap: 3rem;
+		align-items: start;
+		
+		& .abt-img {
+			max-width: 100%;
+			margin: 0;
+		}
+
+		& h1 {
+			text-align: left;
+		}
+	}
+}
+
+.hero {
+	display: grid;
+	grid-template-columns: .62fr 1fr;
+	grid-template-rows: .5fr 1fr;
+	margin-bottom: 3rem;
+
+	& picture {
+			grid-column: 1 / -1;
+			grid-row: 1 / -1;
+	}
+
+	& h1 {
+			grid-column: 2 / -1;
+			grid-row: 1 / 2;
+			align-self: center;
+			padding-inline-end: clamp(0.5rem, 2.5vw, 1rem);
+	}
+
+	/* & .hero-buttons {
+		grid-column: 2 / -1;
+		grid-row: 2 / 3;
+		align-self: center;
+		justify-self: center;
+		display: grid;
+	} */
+}
+
+@media (min-width: 640px) {
+	.hero {
+		grid-template-columns: .4fr 1fr;
+		grid-template-rows: .4fr 1fr;
+		justify-self: center;
+
+		/* & .hero-buttons {
+			grid-column: 2 / -1;
+			grid-row: 3 / -1;
+			gap: 2rem;
+		} */
+	}
+
+	/* .hero-buttons {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		align-self: center;
+
+		& a:first-child {
+			grid-column: 1 / -1;
+		}
+	} */
+}
+
 .trtmnt {
 	max-width: 40rem;
 	margin-inline: auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -327,7 +435,7 @@ UTILITIES (style in HTML document)
 
 .ff-serif { font-family: var(--ff-serif); }
 
-.no-break { white-space: nowrap; }
+
 
 
 /*
@@ -355,39 +463,7 @@ PAGE-SPECIFIC LAYOUTS AND STYLES
 ------------
  */
 
-.abt {
-	display: grid;
-	margin-block-start: clamp(1.5rem, 7.5vw, 3rem);
 
-	& .abt-img {
-		width: 100%;
-		max-width: 372px;
-		height: auto;
-		margin-inline: auto;
-		margin-block-end: clamp(1.25rem, 6.25vw, 2.5rem);
-	}
-
-	& .heading-1_01 {
-		text-align: center;
-	}
-}
-
-@media (min-width: 720px) {
-	.abt {
-		grid-template-columns: minmax(234px,.62fr) 1fr;
-		gap: 3rem;
-		align-items: start;
-		
-		& .abt-img {
-			max-width: 100%;
-			margin: 0;
-		}
-
-		& .heading-1_01 {
-			text-align: left;
-		}
-	}
-}
 
 
 /*
@@ -531,7 +607,7 @@ header.is-scrolled {
 	justify-content: center;
 	align-items: center;
 	margin-top: 1rem;
-	margin-bottom: 2rem;
+	margin-bottom: 3rem;
 
 		@media (min-width: 720px) {
 			flex-direction: row;
@@ -717,57 +793,3 @@ PAGE-SPECIFIC LAYOUTS AND STYLES
 "Home" page
 -----------
 */
-.hero {
-	display: grid;
-	grid-template-columns: .6fr .2fr 1fr;
-	grid-template-rows: .75fr 1fr .5fr;
-	margin-bottom: clamp(2rem, 10vw, 4rem);
-
-	& picture {
-			grid-column: 1 / -1;
-			grid-row: 1 / -1;
-	}
-
-	& h1 {
-			grid-column: 2 / -1;
-			grid-row: 1 / 2;
-			align-self: center;
-			padding-inline: clamp(0.5rem, 2.5vw, 1rem);
-			font-size: clamp(1.5rem, 7.5vw, 3rem);
-			font-family: var(--ff-serif);
-			line-height: 1.1;
-	}
-
-	& .hero-buttons {
-		grid-column: 2 / -1;
-		grid-row: 2 / 3;
-		align-self: center;
-		justify-self: center;
-		display: grid;
-	}
-}
-
-@media (min-width: 640px) {
-	.hero {
-		grid-template-columns: .5fr 1fr;
-		grid-template-rows: .8fr .35fr 1fr;
-		justify-self: center;
-		padding-inline: 0;
-
-		& .hero-buttons {
-			grid-column: 2 / -1;
-			grid-row: 3 / -1;
-			gap: 2rem;
-		}
-	}
-	.hero-buttons {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
-		align-self: center;
-
-		& a:first-child {
-			grid-column: 1 / -1;
-		}
-	}
-}
