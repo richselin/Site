@@ -208,6 +208,11 @@ COMPONENTS (style in CSS)
 	letter-spacing: 0.05em;
 }
 
+.h2-style_03 {
+	font-weight: 400;font-size: 1.25rem;
+	font-family: var(--ff-serif-caption);
+}
+
 .h3-style_01 {
 	font-size: 1.75rem;
 	line-height: 1;
