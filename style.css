@@ -123,12 +123,10 @@ h1 {
 }
 
 a {
-	min-width: 44px;
-	min-height: 44px;
-	padding-inline: 0.75rem;
-	padding-block: 1rem;
 	font-size: 1.25rem;
 	text-decoration: none;
+	padding-block: 0.75rem;
+	padding-inline: 1rem;
 	outline-color: transparent;
 	text-transform: uppercase;
 	letter-spacing: .08em;
@@ -182,8 +180,8 @@ ul[role='list'] {
 
 
 /*
-UTILITIES (style in HTML document)
-==================================
+UTILITIES
+=========
 */
 
 .mrgn-block-end_01 { margin-block-end: 1rem; }
@@ -194,8 +192,8 @@ UTILITIES (style in HTML document)
 
 
 /*
-COMPONENTS (style in CSS)
-=========================
+COMPONENTS
+==========
 */
 
 .flex {
@@ -267,6 +265,21 @@ COMPONENTS (style in CSS)
 	}
 }
 
+.nav-mobile-icon {
+	display: block;
+	width: 2.75rem;
+	min-width: 44px;
+	aspect-ratio: 1;
+	align-self: self-start;
+	margin-block-start: -11px;
+	padding-inline-end: 1rem;
+	border: none;
+	background: none;
+	background-image: url(Assets/bars-solid-full.svg);
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
 /*
 GLOBAL PAGE LAYOUT AND STYLING
 ==============================
@@ -307,13 +320,29 @@ header {
 	}
 }
 
+.nav-links {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	position: fixed;
+	top: 0;
+	right: -100%;
+			transition: right 0.3s ease-in-out;
+	width: 100%;
+	min-height: 40dvh;
+	z-index: 1000;
+	padding-top: calc(env(safe-area-inset-top) + 60px);
+	background-color: white;
+}
+
 .subheader {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 1rem;
-	margin-bottom: 3rem;
+	margin-block: 1.5rem;
 
 		@media (min-width: 768px) {
 			flex-direction: row;
@@ -324,9 +353,10 @@ header {
 .subheader > p {
 	margin: 0;
 	font-variant: small-caps;
-	font-size: 1.125rem;
+	font-size: 1rem;
 	font-family: var(--ff-serif-caption);
 	letter-spacing: .1em;
+	text-align: center;
 }
 
 .subheader > img {
@@ -417,44 +447,8 @@ CUSTOM PAGE LAYOUTS AND STYLING
 
 
 
-
-
-
-
-
 /* === GLOBAL LAYOUT	=== */
 /* header and nav */
-
-.nav-links {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 16px;
-	position: fixed;
-	top: 0;
-	right: -100%;
-			transition: right 0.3s ease-in-out;
-	width: 100%;
-	min-height: 40dvh;
-	z-index: 1000;
-	padding-top: calc(env(safe-area-inset-top) + 60px);
-	background-color: white;
-}
-
-.nav-mobile-icon {
-	display: block;
-	width: 44px;
-	aspect-ratio: 1;
-	align-self: self-start;
-	margin-top: -6px;
-	padding-inline: 16px;
-	border: none;
-	background: none;
-	background-image: url(Assets/bars-solid-full.svg);
-	background-repeat: no-repeat;
-	cursor: pointer;
-}
 
 .menu-close {
 	display: block;
@@ -474,7 +468,7 @@ CUSTOM PAGE LAYOUTS AND STYLING
 	right: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
 	.nav {
 		align-self: flex-end;
 	}
