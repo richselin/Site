@@ -122,6 +122,19 @@ h1 {
 	font-family: var(--ff-serif);
 }
 
+a {
+	min-width: 44px;
+	min-height: 44px;
+	padding-inline: 0.75rem;
+	padding-block: 1rem;
+	font-size: 1.25rem;
+	text-decoration: none;
+	outline-color: transparent;
+	text-transform: uppercase;
+	letter-spacing: .08em;
+	color: var(--clr-primary);
+}
+
 button,
 input,
 select,
@@ -321,23 +334,22 @@ CUSTOM PAGE LAYOUTS
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 GLOBAL STYLES
 =============
 */
-a {
-	min-width: 44px;
-	min-height: 44px;
-	padding-inline: 12px;
-	padding-block: 16px;
-	font-family: var(--ff-sans);
-	font-size: var(--fs-10);
-	text-decoration: none;
-	outline-color: transparent;
-	text-transform: uppercase;
-	letter-spacing: .1em;
-	color: var(--clr-primary);
-}
 
 .logo a {
 	padding-inline: 0;
