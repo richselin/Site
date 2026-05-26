@@ -303,7 +303,7 @@ header {
 
 	& nav {
 		grid-column: 2 / 3;
-		grid-row: 1 / 2;
+		grid-row: 1 / -1;
 	}
 }
 
@@ -442,7 +442,7 @@ CUSTOM PAGE LAYOUTS AND STYLING
 	background-color: white;
 }
 
-.menu-mobile-hamburger {
+.nav-mobile-icon {
 	display: block;
 	width: 44px;
 	aspect-ratio: 1;
@@ -496,8 +496,8 @@ CUSTOM PAGE LAYOUTS AND STYLING
 	}
 
 	/* Hide hamburger menu and fly-out menu-close X */
-	.menu-mobile-hamburger, .menu-close {
-		display: none;
+		.nav-mobile-icon, .menu-close {
+			display: none;
 	}
 }
 
