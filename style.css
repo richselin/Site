@@ -280,6 +280,19 @@ COMPONENTS
 	cursor: pointer;
 }
 
+.menu-close {
+	display: block;
+	position: absolute;
+	top: calc(2rem + env(safe-area-inset-top));
+	right: clamp(0.5rem, 5vw, 3rem);
+	width: 2rem;
+	aspect-ratio: 1;
+	border: none;
+	background: none;
+	background-image: url(Assets/xmark-solid-full.svg);	
+	cursor: pointer;
+}
+
 /*
 GLOBAL PAGE LAYOUT AND STYLING
 ==============================
@@ -447,21 +460,19 @@ CUSTOM PAGE LAYOUTS AND STYLING
 
 
 
-/* === GLOBAL LAYOUT	=== */
-/* header and nav */
 
-.menu-close {
-	display: block;
-	position: absolute;
-	top: calc(2rem + env(safe-area-inset-top));
-	right: clamp(0.5rem, 5vw, 3rem);
-	width: 2rem;
-	aspect-ratio: 1;
-	border: none;
-	background: none;
-	background-image: url(Assets/xmark-solid-full.svg);	
-	cursor: pointer;
-}
+
+
+
+
+
+
+
+
+
+
+
+/* === GLOBAL LAYOUT	=== */
 
 /* Show fly-out menu when hamburger menu is clicked by default for mobile-first design */
 .nav-links.is-active {
