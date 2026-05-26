@@ -52,6 +52,7 @@ CUSTOM PROPERTIES
 */
 
 :root {
+	--ff-sans: akzidenz-grotesk-next-pro, arial, tahoma, sans-serif;
 	--ff-serif: garamond-premier-pro, garamond, georgia, serif;
 }
 
@@ -85,8 +86,9 @@ body {
 	min-height: 100vh;
 	margin-inline: auto;
 	padding-inline: 5%;
+	font-weight: 400;
 	font-size: 1.25rem;
-	font-family: akzidenz-grotesk-next-pro, arial, tahoma, sans-serif;
+	font-family: var(--ff-sans); 
 	line-height: 1.33;
 	text-wrap: pretty;
 	-webkit-font-smoothing: antialiased;
@@ -101,7 +103,6 @@ h4,
 h3,
 h2,
 h1 {
-	font-weight: 400;
 	overflow-wrap: break-word;
 }
 
@@ -111,6 +112,7 @@ h4,
 h3,
 h2,
 h1 {
+	font-weight: 500;
 	font-family: var(--ff-serif);
 }
 
@@ -163,43 +165,36 @@ COMPONENTS (style in CSS)
 }
 
 .h1-style_01 {
-	font-weight: 500;
 	font-size: clamp(2rem, 10vw, 3rem);
 	line-height: 1;
 }
 
 .h1-style_02 {
-	font-weight: 500;
 	font-size: 3rem;
 	line-height: 1;
 }
 
 .h1-style_03 {
-	font-weight: 500;
 	font-size: clamp(1.5rem, 7.5vw, 3rem);
 	line-height: 1;
 }
 
 .h2-style-01 {
-	font-weight: 500;
 	font-size: clamp(2rem, 10vw, 2.5rem);
 	line-height: 1;
 }
 
 .h2-style-02 {
-	font-weight: 500;
 	font-size: var(--fs-14);
 	letter-spacing: 0.05em;
 }
 
 .h3-style_01 {
-	font-weight: 500;
 	font-size: 1.75rem;
 	line-height: 1;
 }
 
 .h4-style_01 {
-	font-weight: 500;
 	font-size: 1.5rem;
 	line-height: 1;
 }
@@ -425,7 +420,6 @@ CUSTOM PROPERTIES (CSS Variables)
 	--ff-serif-caption: garamond-premier-pro-caption, garamond, georgia, serif;
 	--ff-serif-subhead: garamond-premier-pro-subhead, garamond, georgia, serif;
 	--ff-serif-display: garamond-premier-pro-display, garamond, georgia, serif;
-	--ff-sans: akzidenz-grotesk-next-pro, arial, tahoma, sans-serif;
 	--ff-ornaments: brioso-pro, serif;
 	--ff-inscription: trajan-pro-3, serif;
 
