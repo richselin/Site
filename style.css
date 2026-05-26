@@ -350,6 +350,38 @@ header {
 	background-color: white;
 }
 
+/* Show fly-out menu when hamburger menu is clicked by default for mobile-first design */
+.nav-links.is-active {
+	right: 0;
+}
+
+@media (min-width: 800px) {
+	.nav {
+		align-self: flex-end;
+	}
+	
+	/* Show links */
+	.nav-links {
+		position: static;
+		width: auto;
+		min-height: 0;
+		flex-direction: row;
+		padding-top: 0;
+		background-color: transparent;
+		transition: none;
+	}
+
+	.nav-links a {
+		padding: 0;
+		padding-inline: 1rem;
+	}
+
+	/* Hide hamburger menu and fly-out menu-close X */
+		.nav-mobile-icon, .menu-close {
+			display: none;
+	}
+}
+
 .subheader {
 	display: flex;
 	flex-direction: column;
@@ -462,49 +494,6 @@ CUSTOM PAGE LAYOUTS AND STYLING
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* === GLOBAL LAYOUT	=== */
-
-/* Show fly-out menu when hamburger menu is clicked by default for mobile-first design */
-.nav-links.is-active {
-	right: 0;
-}
-
-@media (min-width: 800px) {
-	.nav {
-		align-self: flex-end;
-	}
-	
-	/* Show links */
-	.nav-links {
-		position: static;
-		width: auto;
-		min-height: 0;
-		flex-direction: row;
-		padding-top: 0;
-		background-color: transparent;
-		transition: none;
-	}
-
-	.nav-links a {
-		padding: 0;
-		padding-inline: 0.5rem;
-	}
-
-	/* Hide hamburger menu and fly-out menu-close X */
-		.nav-mobile-icon, .menu-close {
-			display: none;
-	}
-}
 
 
 /*
