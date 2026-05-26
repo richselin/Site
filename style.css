@@ -372,10 +372,6 @@ header {
 
 
 
-header.is-scrolled {
-	transition: box-shadow 200ms ease;
-}
-
 .scroll-sentinel {
 	position: absolute;
 	top: 0;

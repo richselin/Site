@@ -33,12 +33,5 @@ const sentinel = document.createElement("div");
 sentinel.className = "scroll-sentinel";
 header.insertAdjacentElement("afterend", sentinel);
 
-const observer = new IntersectionObserver((entries) => {
-    //If the sentinel is NOT visible, user is scrolling down
-    header.classList.toggle("is-scrolled", !entries[0].isIntersecting);
-}, {
-    threshold: [0]
-});
-
 observer.observe(sentinel);
 
