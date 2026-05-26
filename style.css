@@ -6,8 +6,8 @@ TABLE OF CONTENTS
 	GLOBAL ELEMENT STYLES
 	UTILITIES
 	COMPONENTS
-	GLOBAL LAYOUT
-	CUSTOM PAGE LAYOUTS
+	GLOBAL PAGE LAYOUT AND STYLING
+	CUSTOM PAGE LAYOUTS AND STYLING
 */
 
 
@@ -247,8 +247,8 @@ COMPONENTS (style in CSS)
 }
 
 /*
-GLOBAL PAGE LAYOUT
-==================
+GLOBAL PAGE LAYOUT AND STYLING
+==============================
 */
 
 header {
@@ -286,6 +286,33 @@ header {
 	}
 }
 
+.subheader {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
+	margin-bottom: 3rem;
+
+		@media (min-width: 768px) {
+			flex-direction: row;
+			gap: 1rem;
+		}
+	}
+
+.subheader > p {
+	margin: 0;
+	font-variant: small-caps;
+	font-size: 1.125rem;
+	font-family: var(--ff-serif-caption);
+	letter-spacing: .1em;
+}
+
+.subheader > img {
+	width: 1.5rem;
+	padding-block: 0.35em;
+}
+
 footer {
 	display: flex;
 	flex-direction: column;
@@ -306,8 +333,8 @@ footer {
 
 
 /*
-CUSTOM PAGE LAYOUTS
-===================
+CUSTOM PAGE LAYOUTS AND STYLING
+===============================
 */
 
 .about {
@@ -370,38 +397,8 @@ CUSTOM PAGE LAYOUTS
 
 
 
-
-
 /* === GLOBAL LAYOUT	=== */
 /* header and nav */
-
-.subheader {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin-top: 1rem;
-	margin-bottom: 3rem;
-
-		@media (min-width: 720px) {
-			flex-direction: row;
-			gap: 1.25em;
-		}
-	}
-
-.subheader > p {
-	margin: 0;
-	font-size: clamp(.625rem, 3.8vw, .8125rem);
-	font-family: var(--ff-serif-caption);
-	text-transform: uppercase;
-	letter-spacing: clamp(.1em, .42vw, .15em);
-	white-space: nowrap;
-}
-
-.subheader > img {
-	width: 1.5rem;
-	padding-block: 0.35em;
-}
 
 .nav-links {
 	display: flex;
@@ -476,7 +473,7 @@ a:active {
 	right: 0;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 768px) {
 	.nav {
 		align-self: flex-end;
 	}
