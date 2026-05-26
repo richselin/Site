@@ -433,6 +433,13 @@ CUSTOM PAGE LAYOUTS AND STYLING
 ===============================
 */
 
+/* Home page */
+#start-here {
+	padding: 2rem;
+	border: 3px solid black;
+	border-radius: 2rem;
+}
+
 .about {
 	display: grid;
 
