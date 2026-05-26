@@ -53,7 +53,13 @@ CUSTOM PROPERTIES
 
 :root {
 	--ff-sans: akzidenz-grotesk-next-pro, arial, tahoma, sans-serif;
+	--ff-serif-caption: garamond-premier-pro-caption, garamond, georgia, serif;
 	--ff-serif: garamond-premier-pro, garamond, georgia, serif;
+
+	--clr-primary: #002fa7;
+	--clr-primary-tint: #ccd5ed;
+	--clr-complement: #b46b09;
+	--clr-tetrad: #b40987;
 }
 
 
@@ -296,70 +302,23 @@ CUSTOM PAGE LAYOUTS
 
 
 
-/*
-CUSTOM PROPERTIES
-=================
-*/
-:root {
-	--fw-regular: 400;
-	--fw-medium: 500;
-
-	--fs-sans: clamp(1rem, 5vw, 1.25rem);
-
-	--fs-11: clamp(1.125vw, 5.625vw, 1.40625rem)
-	--fs-12: clamp(1.25rem);
-	--fs-14: 1.5rem;
-	--fs-18: 1.875rem;
-	--fs-24: 2.5rem;
-	--fs-36: 3rem;
-	--fs-48: 4rem;
-	--fs-72: 6rem;
-
-
-
-	--rem-050_125x: clamp(0.5rem, 2.5vw, 0.625rem);
-	--rem-100_125x: clamp(1rem, 5vw, 1.25rem);
-	--rem-150_125x: clamp(1.5rem, 7.5vw, 1.875rem);
-	--rem-200_125x: clamp(2rem, 10vw, 2.5rem);
-
-	--rem-050_2x: clamp(0.5rem, 2.5vw, 1rem);
-	--rem-100_2x: clamp(1rem, 5vw, 2rem);
-	--rem-150_2x: clamp(1.5rem, 7.5vw, 3rem);
-	--rem-225_2x: clamp(2.25rem, 11.25vw, 4.5rem);
-
-}
 
 
 
 
-/*
-CUSTOM PROPERTIES (CSS Variables)
-=================================
-*/
 
-:root {
-	--fw-light: 300;
-	--fw-semibold: 600;
-	--fw-bold: 700;
-	--fw-extrabold: 800;
-	--fw-black: 900;
 
-	
 
-	--ff-serif-caption: garamond-premier-pro-caption, garamond, georgia, serif;
-	--ff-serif-subhead: garamond-premier-pro-subhead, garamond, georgia, serif;
-	--ff-serif-display: garamond-premier-pro-display, garamond, georgia, serif;
-	--ff-ornaments: brioso-pro, serif;
-	--ff-inscription: trajan-pro-3, serif;
 
-	--clr-primary: #002fa7;
-	--clr-primary-tint: #ccd5ed;
 
-	--clr-complement: #b46b09;
 
-	--clr-tetrad: #b40987;
 
-}
+
+
+
+
+
+
 
 
 /*
