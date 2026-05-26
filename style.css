@@ -314,39 +314,6 @@ CUSTOM PAGE LAYOUTS
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* === GLOBAL LAYOUT	=== */
 /* header and nav */
 header {
@@ -354,6 +321,7 @@ header {
 	grid-template-columns: 1fr min-content;
 	grid-template-rows: 1fr auto;
 	column-gap: 1rem;
+	row-gap: 0.5rem;
 	position: sticky;
 	top: 0;
 	width: 100%;
@@ -368,17 +336,41 @@ header {
 		grid-column: 1 / 2;
 		grid-row: 1 / 2;
 		max-width: 288px;
-		width: 100%; /* force image to conform to grid cell */
 		padding-inline: 0;
 		padding-block: 0;
+	}
+
+	& h2 {
+		grid-column: 1 / -1;
+		grid-row: 2 / -1;
 	}
 
 	& nav {
 		grid-column: 2 / 3;
 		grid-row: 1 / 2;
-		justify-self: flex-end;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 header.is-scrolled {
 	transition: box-shadow 200ms ease;
