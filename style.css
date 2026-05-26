@@ -347,36 +347,7 @@ CUSTOM PAGE LAYOUTS
 
 
 
-
-
-
-
-/*
-GLOBAL STYLES
-=============
-*/
-
-input,
-button,
-textarea,
-select {
-	/* override user agent defaults by applying font values of parent element */
-	font: inherit;
-}
-
-picture,
-img,
-video,
-canvas,
-svg {
-	/* convert images from inline element to block element */
-	display: block;
-	/* make images responsive */
-	max-width: 100%;
-}
-/* #endregion */
-
-/* #region === UTILITY CLASSES	=== */
+/* === UTILITY CLASSES	=== */
 
 .sr-only {
 	position: absolute;
@@ -391,9 +362,8 @@ svg {
 }
 
 
-/* #region === COMPONENTS === */
+/* === COMPONENTS === */
 
-/* #endregion */
 
 /* #region === GLOBAL LAYOUT	=== */
 /* header and nav */
