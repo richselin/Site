@@ -356,11 +356,6 @@ GLOBAL STYLES
 =============
 */
 
-.logo a {
-	padding-inline: 0;
-	padding-block: 0;
-}
-
 input,
 button,
 textarea,
@@ -417,11 +412,13 @@ header {
 	border-bottom: 1px solid rgb(0 0 0 / 0.5);
 	background-color: white;
 
-	& div.logo {
+	& .logo {
 		grid-column: 1 / 2;
 		grid-row: 1 / 2;
 		max-width: 288px;
 		width: 100%; /* force image to conform to grid cell */
+		padding-inline: 0;
+		padding-block: 0;
 	}
 
 	& nav {
