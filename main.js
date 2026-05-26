@@ -25,13 +25,3 @@ menuClose.addEventListener('click', () => setMenuState(false));
 navLinksAnchors.forEach(link => {
     link.addEventListener('click', () => setMenuState(false));
 });
-
-// Add sentinel to show header border-bottom when user starts scrolling
-const header = document.querySelector("header");
-const sentinel = document.createElement("div");
-
-sentinel.className = "scroll-sentinel";
-header.insertAdjacentElement("afterend", sentinel);
-
-observer.observe(sentinel);
-
