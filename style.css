@@ -604,8 +604,8 @@ PAGE LAYOUTS AND STYLES (common to all pages)
     1rem
   );
   font-size: clamp(
-    0.75rem,
-    3.75vw,
+    0.875rem,
+    4.375vw,
     1.25rem
   );
 }
