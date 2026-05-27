@@ -469,6 +469,57 @@ CUSTOM PAGE LAYOUTS AND STYLING
   border-radius: 2rem;
 }
 
+.hero {
+  display: grid;
+  grid-template-columns: 0.62fr 1fr;
+  grid-template-rows: 0.8fr 0.6fr 1fr;
+  margin-bottom: 3rem;
+
+  & picture {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+  }
+
+  & h1 {
+    grid-column: 2 / -1;
+    grid-row: 1 / 2;
+    align-self: center;
+    padding-inline-end: clamp(
+      0.5rem,
+      2.5vw,
+      1rem
+    );
+  }
+
+  & .hero-buttons {
+    grid-column: 2 / -1;
+    grid-row: 3 / 4;
+    display: inline-flex;
+    flex-direction: column;
+    gap: clamp(1rem, 5vw, 2rem);
+    align-items: center;
+  }
+}
+
+.hero-buttons a {
+  margin: 0;
+  padding-block: clamp(
+    0.45rem,
+    2.25vw,
+    0.75rem
+  );
+  padding-inline: clamp(
+    0.6rem,
+    3vw,
+    1rem
+  );
+  font-size: clamp(
+    0.875rem,
+    4.375vw,
+    1.25rem
+  );
+}
+
 .about {
   display: grid;
 
@@ -533,79 +584,3 @@ PAGE LAYOUTS AND STYLES (common to all pages)
 */
 
 /* footer */
-
-.hero {
-  display: grid;
-  grid-template-columns: 0.62fr 1fr;
-  grid-template-rows: 0.8fr 0.6fr 1fr;
-  margin-bottom: 3rem;
-
-  & picture {
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
-  }
-
-  & h1 {
-    grid-column: 2 / -1;
-    grid-row: 1 / 2;
-    align-self: center;
-    padding-inline-end: clamp(
-      0.5rem,
-      2.5vw,
-      1rem
-    );
-  }
-
-  & .hero-buttons {
-    grid-column: 2 / -1;
-    grid-row: 3 / 4;
-    display: inline-flex;
-    flex-direction: column;
-    gap: clamp(1rem, 5vw, 2rem);
-    align-items: center;
-  }
-}
-
-@media (min-width: 640px) {
-  .hero {
-    grid-template-columns: 0.4fr 1fr;
-    grid-template-rows: 0.4fr 1fr;
-    justify-self: center;
-
-    /* & .hero-buttons {
-			grid-column: 2 / -1;
-			grid-row: 3 / -1;
-			gap: 2rem;
-		} */
-  }
-
-  /* .hero-buttons {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
-		align-self: center;
-
-		& a:first-child {
-			grid-column: 1 / -1;
-		}
-	} */
-}
-
-.hero-buttons a {
-  margin: 0;
-  padding-block: clamp(
-    0.45rem,
-    2.25vw,
-    0.75rem
-  );
-  padding-inline: clamp(
-    0.6rem,
-    3vw,
-    1rem
-  );
-  font-size: clamp(
-    0.875rem,
-    4.375vw,
-    1.25rem
-  );
-}
