@@ -101,7 +101,7 @@ body {
     2rem
   );
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 5vw, 1.25rem);
   font-family: var(--ff-sans);
   line-height: 1.33;
   text-wrap: pretty;
@@ -213,35 +213,19 @@ COMPONENTS
 .flex {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: clamp(0.8rem, 4vw, 1rem);
 }
 
-.h1-style_01 {
+.heading-style_01 {
   font-size: clamp(2rem, 10vw, 3rem);
 }
 
-.h1-style_02 {
-  font-size: 3rem;
-}
-
-.h1-style_03 {
-  font-size: clamp(1.5rem, 7.5vw, 3rem);
-}
-
-.h2-style-01 {
+.heading-style_02 {
   font-size: clamp(2rem, 10vw, 2.5rem);
 }
 
-.h2-style-02 {
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
-}
-
-.h2-style_03 {
-  font-weight: 400;
-  font-size: 1.25rem;
-  font-family: var(--ff-serif);
-  letter-spacing: 0.05em;
+.heading-style_03 {
+  font-size: clamp (1.2rem, 6vw, 1.5rem);
 }
 
 .h3-style_01 {
@@ -249,10 +233,6 @@ COMPONENTS
 }
 
 .h4-style_01 {
-  font-size: 1.5rem;
-}
-
-heading-style-1 {
   font-size: 1.5rem;
 }
 
@@ -342,6 +322,14 @@ header {
   & h2 {
     grid-column: 1 / -1;
     grid-row: 2 / -1;
+    font-weight: 400;
+    font-size: clamp(
+      1rem,
+      5vw,
+      1.25rem
+    );
+    font-family: var(--ff-serif);
+    letter-spacing: 0.05em;
   }
 
   & nav {
@@ -458,6 +446,10 @@ footer {
     margin-inline-start: 6rem;
   }
 }
+footer h2 {
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+}
 
 footer a {
   margin-block-start: 1.5rem;
@@ -498,6 +490,11 @@ CUSTOM PAGE LAYOUTS AND STYLING
       0.5rem,
       2.5vw,
       1rem
+    );
+    font-size: clamp(
+      1.5rem,
+      7.5vw,
+      3rem
     );
   }
 
