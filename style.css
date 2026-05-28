@@ -225,15 +225,11 @@ COMPONENTS
 }
 
 .heading-style_03 {
+  font-size: clamp(1.6rem, 8vw, 2rem);
+}
+
+.heading-style_04 {
   font-size: clamp (1.2rem, 6vw, 1.5rem);
-}
-
-.h3-style_01 {
-  font-size: 1.75rem;
-}
-
-.h4-style_01 {
-  font-size: 1.5rem;
 }
 
 .para-price {
