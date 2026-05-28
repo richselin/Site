@@ -193,8 +193,21 @@ UTILITIES
 =========
 */
 
+.col-width-78 {
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
 .mrgn-block-end_01 {
   margin-block-end: 1rem;
+}
+
+.mrgn-block-end_02 {
+  margin-block-end: 2rem;
+}
+
+.mrgn-block-end_03 {
+  margin-block-end: 5rem;
 }
 
 .txt-center {
@@ -244,17 +257,6 @@ COMPONENTS
   color: teal;
 }
 
-.menu-title {
-  display: flex;
-  column-gap: clamp(0.8rem, 4vw, 1rem);
-  justify-content: center;
-  margin-block-end: -1.5rem;
-
-  & img {
-    width: clamp(1.2rem, 6vw, 1.5rem);
-  }
-}
-
 .nav-mobile-icon {
   display: block;
   width: 2.75rem;
@@ -285,6 +287,10 @@ COMPONENTS
   cursor: pointer;
 }
 
+.separator {
+  width: 10rem;
+  margin-inline: auto;
+}
 /*
 GLOBAL PAGE LAYOUT AND STYLING
 ==============================
@@ -523,6 +529,8 @@ CUSTOM PAGE LAYOUTS AND STYLING
   );
 }
 
+/* About page */
+
 .about {
   display: grid;
 
@@ -558,11 +566,6 @@ CUSTOM PAGE LAYOUTS AND STYLING
   }
 }
 
-.col-width-78 {
-  max-width: 40rem;
-  margin-inline: auto;
-}
-
 /*
 BASE STYLES
 =============
@@ -573,17 +576,9 @@ BASE STYLES
   justify-content: center;
   align-items: center;
   width: fit-content;
-  margin-block: 1.5rem;
   border: 2px solid var(--clr-primary);
   border-radius: 1rem;
   font-size: 1.25rem;
   text-align: center;
   background-color: white;
 }
-
-/*
-PAGE LAYOUTS AND STYLES (common to all pages)
-=============================================
-*/
-
-/* footer */
