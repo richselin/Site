@@ -454,6 +454,18 @@ footer {
     align-items: baseline;
     gap: 2rem;
   }
+
+  footer a {
+    margin: 0;
+    margin-inline-start: 6rem;
+  }
+}
+
+footer a {
+  margin-block-start: 1.5rem;
+  padding: 0;
+  text-decoration: underline;
+  text-transform: unset;
 }
 
 /*
