@@ -288,7 +288,8 @@ COMPONENTS
 }
 
 .separator {
-  width: 10rem;
+  width: clamp(3rem, 15vw, 6rem);
+  margin-block: 3rem;
   margin-inline: auto;
 }
 /*
