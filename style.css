@@ -133,7 +133,7 @@ h1 {
 }
 
 a {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 5vw, 1.25rem);
   text-decoration: none;
   padding-block: 0.75rem;
   padding-inline: 1rem;
@@ -579,7 +579,6 @@ BASE STYLES
   width: fit-content;
   border: 2px solid var(--clr-primary);
   border-radius: 1rem;
-  font-size: 1.25rem;
   text-align: center;
   background-color: white;
 }
