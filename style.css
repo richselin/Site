@@ -92,8 +92,11 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   max-width: 68rem;
   min-height: 100vh;
+  min-height: 100dvh;
   margin-inline: auto;
   padding-inline: clamp(
     1rem,
