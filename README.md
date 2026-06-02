@@ -1,11 +1,11 @@
-# Sonya Dilbeck Esthetics website
+# Sonya Dilbeck Esthetics Website
 
 > **Live Website:** [sonyadilbeck.com](https://sonyadilbeck.com)
 
 This website, for a sole practitioner skincare clinic in Los Angeles, uses art direction and text/button overlays in the Hero section, fluid typography, and layout-first responsiveness to satisfy the client brief for a sophisticated, minimalist site with an editorial look.
 
 <p align="center">
-  <img width=320 alt="Image" src="https://github.com/user-attachments/assets/57facd3f-4f0c-4230-b495-bf21387c82ba" />
+  <img width="320" alt="Sonya Dilbeck Esthetics Mobile View" src="https://github.com/user-attachments/assets/57facd3f-4f0c-4230-b495-bf21387c82ba" />
 </p>
 
 ---
@@ -24,25 +24,25 @@ The "View Treatments" and "Book Online" buttons are overlaid on the Hero photo t
 ### SEO optimization
 Content was optimally organized with appropriate semantic HTML elements. The title and meta description elements in the head contain high-value, descriptive keywords relevant to the website content, emphasizing the location, services, and business focus. Open Graph and Twitter card data are provided along with an absolute URL for a properly cropped (1.91:1 aspect ratio) image. Finally, a JSON-LD object with type BeautySalon from schema.org provides vital information to search engines.
 
-## Technical details
+## Technical Details
 
-### Graphic and UI/UX design
+### Graphic and UI/UX Design
 As a graphic web designer, I designed the visual elements for the website in addition to coding it.
-* Wordmark - Adobe Illustrator
-* Mock-ups - Adobe Illustrator
-* Image editing, processing, cropping, and resizing - Adobe Lightroom Classic
-* Fonts: Adobe Garamond Premier in two optical sizes and Akzidenk-Grotesk Next
+* **Wordmark:** Adobe Illustrator
+* **Mock-ups:** Adobe Illustrator
+* **Image editing, processing, cropping, and resizing:** Adobe Lightroom Classic
+* **Fonts:** Adobe Garamond Premier in two optical sizes and Akzidenz-Grotesk Next
 
-### Coding stack
+### Coding Stack
 * HTML, CSS, and JavaScript
 
-### Testing, hosting, and deployment
-* Test site deployment - GitHub / Netlify
-* Testing - Chrome Developer Tools; Apple Xcode for iPhone simulation, especially dynamic island; iPhone 12 Pro Max, iPhone 14 Pro, and MacBook Air
-* Deployment - domain hosted on Squarespace (existing contract), DNS changed to point to Netlify deployment
+### Testing, Hosting, and Deployment
+* **Test site deployment:** GitHub / Netlify
+* **Testing:** Chrome Developer Tools; iPhone 12 Pro Max, iPhone 14 Pro (for Dynamic Island), and MacBook Air
+* **Deployment:** Domain hosted on Squarespace (existing contract); DNS changed to point to Netlify deployment. Site will move to new host when Squarespace contract expires in September.
 
 ## Project Takeaways & Growth
-This was my first website. I am happy with the result. I learned a lot and already see areas for improvement. I am very pleased with the visuals, especially the typography, and the smooth responsiveness I achieved through both fluid typography and setting my breakpoints individually based on where the layout or image crop failed (as opposed to setting 3-5 fixed breakpoints and trying to force the layout to the breakpoint). However, Illustrator was inefficient for mockups and did not provide any value-added when it came to coding; I will learn and use Figma next time. In the CSS, I want to develop a better philosophy for separating or organizing concerns, find a good balance between utility classes and components, and improve structure and class naming. My testing was a bit on the weak side and I will develop a better protocol for the next build.
+This was my first website. I am happy with the result. I learned a lot and already see areas for improvement. I am very pleased with the visuals, especially the typography, and the smooth responsiveness I achieved through both fluid typography and setting my breakpoints individually based on where the layout or image crop failed (as opposed to setting 3-5 fixed breakpoints and trying to force the layout to the breakpoint). However, Illustrator was inefficient for mockups and did not provide any added value when it came to coding; I will learn and use Figma next time. In the CSS, I want to develop a better philosophy for separating or organizing concerns, find a good balance between utility classes and components, and improve structure and class naming. My testing was a bit on the weak side (no Android devices or simulation) and I will develop a better protocol for the next build, including using Apple Xcode to simulate the iPhone.
 
 ## 📄 License & Contact
 
