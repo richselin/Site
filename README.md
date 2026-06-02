@@ -44,9 +44,13 @@ As a graphic web designer, I designed the visual elements for the website in add
 ## Project Takeaways & Growth
 This was my first website. I am happy with the result. I learned a lot and already see areas for improvement. I am very pleased with the visuals, especially the typography, and the smooth responsiveness I achieved through both fluid typography and setting my breakpoints individually based on where the layout or image crop failed (as opposed to setting 3-5 fixed breakpoints and trying to force the layout to the breakpoint). However, Illustrator was inefficient for mockups and did not provide any added value when it came to coding; I will learn and use Figma next time. In the CSS, I want to develop a better philosophy for separating or organizing concerns, find a good balance between utility classes and components, and improve structure and class naming. My testing was a bit on the weak side (no Android devices or simulation) and I will develop a better protocol for the next build, including using Apple Xcode to simulate the iPhone.
 
-## 📄 License & Contact
+## License & Contact
 
 This project is open-source and available under the [MIT License](LICENSE).
+
+## Contributions
+
+This project is a static portfolio piece representing a completed client delivery. It is maintained as read-only, and I am not accepting public contributions or pull requests at this time.
 
 **Built by Richard (Rich) Selin**
 * **LinkedIn:** [linkedin.com/in/richard-selin](https://linkedin.com/in/richard-selin)
