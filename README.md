@@ -19,10 +19,13 @@ Optimized for smooth responsiveness across all widths by using layout-driven bre
 Establishes visual hierarchy and directs the eye through careful font family selection, size, and weight; character and line spacing; and alignment.
   
 ### Conversion-driven calls-to-action (CTAs)
-The "View Treatments" and "Book Online" buttons are overlaid on the Hero photo to engage the user immediately. The "Start With A Skin Assessment" section starts "above the fold" to entice the user to scroll down and engage further. The site also benefits from lightning-fast loading due to lightweight architecture and optimized image sizing (<200kB), avoiding the long load times of framework websites that frequently cause users to move on to the next search result.
+The "View Treatments" and "Book Online" buttons are overlaid on the Hero photo to engage the user immediately. The "Start With A Skin Assessment" section starts "above the fold" to entice the user to scroll down and engage further.
 
 ### SEO optimization
 Content was optimally organized with appropriate semantic HTML elements. The title and meta description elements in the head contain high-value, descriptive keywords relevant to the website content, emphasizing the location, services, and business focus. Open Graph and Twitter card data are provided along with an absolute URL for a properly cropped (1.91:1 aspect ratio) image. Finally, a JSON-LD object with type BeautySalon from schema.org provides vital information to search engines.
+
+### Speed
+The site benefits from fast loading due to its static build using the "vanilla" HTML, CSS, and JavaScript languages native to the web. Image dimensions are optimally sized to the layout and file size limited to 200 kB. These features reduce or eliminate long load times compared with framework websites, which frequently result in users moving on to the next search result.
 
 ## Technical Details
 
