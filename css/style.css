@@ -51,15 +51,9 @@ CUSTOM PROPERTIES
 */
 
 :root {
-  --ff-sans:
-    akzidenz-grotesk-next-pro, arial,
-    tahoma, sans-serif;
-  --ff-serif-caption:
-    garamond-premier-pro-caption,
-    garamond, georgia, serif;
-  --ff-serif:
-    garamond-premier-pro, garamond,
-    georgia, serif;
+  --ff-sans: akzidenz-grotesk-next-pro, arial, tahoma, sans-serif;
+  --ff-serif-caption: garamond-premier-pro-caption, garamond, georgia, serif;
+  --ff-serif: garamond-premier-pro, garamond, georgia, serif;
 
   --clr-primary: #002fa7;
   --clr-primary-tint: #ccd5ed;
@@ -98,11 +92,7 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   margin-inline: auto;
-  padding-inline: clamp(
-    1rem,
-    5vw,
-    2rem
-  );
+  padding-inline: clamp(1rem, 5vw, 2rem);
   font-weight: 400;
   font-size: clamp(1rem, 5vw, 1.25rem);
   font-family: var(--ff-sans);
@@ -270,7 +260,7 @@ COMPONENTS
   padding-inline-end: 1rem;
   border: none;
   background: none;
-  background-image: url(Assets/bars-solid-full.svg);
+  background-image: url(../assets/bars-solid-full.svg);
   background-repeat: no-repeat;
   cursor: pointer;
 }
@@ -278,15 +268,13 @@ COMPONENTS
 .menu-close {
   display: block;
   position: absolute;
-  top: calc(
-    2rem + env(safe-area-inset-top)
-  );
+  top: calc(2rem + env(safe-area-inset-top));
   right: clamp(0.5rem, 5vw, 3rem);
   width: 2rem;
   aspect-ratio: 1;
   border: none;
   background: none;
-  background-image: url(Assets/xmark-solid-full.svg);
+  background-image: url(../assets/xmark-solid-full.svg);
   cursor: pointer;
 }
 
@@ -313,8 +301,7 @@ header {
   align-items: start;
   padding-top: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid
-    rgb(0 0 0 / 0.5);
+  border-bottom: 1px solid rgb(0 0 0 / 0.5);
   background-color: white;
 
   & .logo {
@@ -329,11 +316,7 @@ header {
     grid-column: 1 / -1;
     grid-row: 2 / -1;
     font-weight: 400;
-    font-size: clamp(
-      1rem,
-      5vw,
-      1.25rem
-    );
+    font-size: clamp(1rem, 5vw, 1.25rem);
     font-family: var(--ff-serif);
     letter-spacing: 0.05em;
   }
@@ -357,9 +340,7 @@ header {
   width: 100%;
   min-height: 40dvh;
   z-index: 1000;
-  padding-top: calc(
-    env(safe-area-inset-top) + 60px
-  );
+  padding-top: calc(env(safe-area-inset-top) + 60px);
   background-color: white;
 }
 
@@ -436,8 +417,7 @@ footer {
   margin-block-start: 4.5rem;
   padding-block-start: 1.5rem;
   padding-block-end: 4.5rem;
-  border-top: 1px solid
-    rgba(0 0 0 / 0.2);
+  border-top: 1px solid rgba(0 0 0 / 0.2);
 }
 
 @media (min-width: 720px) {
@@ -492,16 +472,8 @@ CUSTOM PAGE LAYOUTS AND STYLING
     grid-column: 2 / -1;
     grid-row: 1 / 2;
     align-self: center;
-    padding-inline-end: clamp(
-      0.5rem,
-      2.5vw,
-      1rem
-    );
-    font-size: clamp(
-      1.5rem,
-      7.5vw,
-      3rem
-    );
+    padding-inline-end: clamp(0.5rem, 2.5vw, 1rem);
+    font-size: clamp(1.5rem, 7.5vw, 3rem);
   }
 
   & .hero-buttons {
@@ -516,21 +488,9 @@ CUSTOM PAGE LAYOUTS AND STYLING
 
 .hero-buttons a {
   margin: 0;
-  padding-block: clamp(
-    0.45rem,
-    2.25vw,
-    0.75rem
-  );
-  padding-inline: clamp(
-    0.6rem,
-    3vw,
-    1rem
-  );
-  font-size: clamp(
-    0.875rem,
-    4.375vw,
-    1.25rem
-  );
+  padding-block: clamp(0.45rem, 2.25vw, 0.75rem);
+  padding-inline: clamp(0.6rem, 3vw, 1rem);
+  font-size: clamp(0.875rem, 4.375vw, 1.25rem);
 }
 
 /* About page */
