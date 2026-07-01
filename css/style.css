@@ -1,49 +1,43 @@
-/* 
-TABLE OF CONTENTS
-=================
-	NOTES	
-	CUSTOM PROPERTIES
-	GLOBAL ELEMENT STYLES
-	UTILITIES
-	COMPONENTS
-	GLOBAL PAGE LAYOUT AND STYLING
-	CUSTOM PAGE LAYOUTS AND STYLING
-*/
-
 /*
-NOTES
-=====
-	CSS rule hierarchy - from the outside in
-	1. Layout and positioning
-		a. display (grid/flexbox) and position (absolute, relative, sticky, etc.)
-		b. item/content alignment and justification or top/bottom/left/right
-		c. z-index
-	2. Box model
-		a. margin
-		b. padding
-		c. border
-	3. Typography
-		a. font-style
-		b. font-variant
-		c. font-weight
-		d. font-size
-		e. font-family
-		f. text-transform
-		g. letter-spacing
-		h. line-height
-		i. alignment
-	4. Color
-		a. color
-		b. background
-
-	Tap target size guidelines
-	1. min-width: and min-height: 44px
-	2. Minimum spacing between targets
-		a. 4-6px: dense UI minimum
-		b. 8-12px: minimum
-		c. 12-16px: comfortable mobile UI
-	3. Expand target size with 12-16px padding
+@FONT-FACE DECLARATIONS
+=======================
 */
+/* eb-garamond-regular - latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/eb-garamond-v32-latin_latin-ext-regular.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* eb-garamond-500 - latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/eb-garamond-v32-latin_latin-ext-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-regular - latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto-v51-latin_latin-ext-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-700italic - latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/roboto-v51-latin_latin-ext-700italic.woff2")
+    format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
 /*
 CUSTOM PROPERTIES
@@ -51,9 +45,21 @@ CUSTOM PROPERTIES
 */
 
 :root {
-  --ff-sans: akzidenz-grotesk-next-pro, arial, tahoma, sans-serif;
-  --ff-serif-caption: garamond-premier-pro-caption, garamond, georgia, serif;
-  --ff-serif: garamond-premier-pro, garamond, georgia, serif;
+  --fw-regular: 400; /* EB Garamond, Roboto */
+  --fw-medium: 500; /* EB Garamond */
+  --fw-bold: 700; /* Roboto italic only */
+
+  /* --fw-extra-light: 100; */
+  /* --fw-light: 200; */
+  /* --fw-book: 300; */
+  /* --fw-semi-bold: 600; */
+  /* --fw-extra-bold: 800; */
+  /* --fw-black: 900; */
+
+  --ff-heads: "EB Garamond", georgia, garamond, serif;
+  --ff-body:
+    Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif;
 
   --clr-primary: #002fa7;
   --clr-primary-tint: #ccd5ed;
@@ -61,6 +67,35 @@ CUSTOM PROPERTIES
   --clr-tetrad: #b40987;
 }
 
+/*
+CSS RESET
+=========
+*/
+
+/*
+GLOBAL CSS
+==========
+*/
+
+/*
+COMPOSITION
+===========
+*/
+
+/*
+UTILITIES
+=========
+*/
+
+/*
+BLOCKS
+======
+*/
+
+/*
+EXCEPTIONS
+==========
+*/
 /*
 GLOBAL ELEMENT STYLES
 =====================
@@ -93,9 +128,9 @@ body {
   min-height: 100dvh;
   margin-inline: auto;
   padding-inline: clamp(1rem, 5vw, 2rem);
-  font-weight: 400;
-  font-size: clamp(1rem, 5vw, 1.25rem);
-  font-family: var(--ff-sans);
+  font-weight: var(--fw-regular);
+  font-size: clamp(1rem, 5vw, 1.125rem);
+  font-family: var(--ff-body);
   line-height: 1.33;
   text-wrap: pretty;
   overflow-x: clip;
@@ -120,8 +155,8 @@ h4,
 h3,
 h2,
 h1 {
-  font-weight: 500;
-  font-family: var(--ff-serif);
+  font-weight: var(--fw-medium);
+  font-family: var(--ff-heads);
   line-height: 1;
 }
 
@@ -239,13 +274,13 @@ COMPONENTS
 }
 
 .para-price {
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   font-size: 1.375rem;
-  font-family: var(--ff-serif);
+  font-family: var(--ff-heads);
 }
 
 .food-allergy-warning {
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: 0.03em;
   color: teal;
 }
@@ -315,10 +350,10 @@ header {
   & h2 {
     grid-column: 1 / -1;
     grid-row: 2 / -1;
-    font-weight: 400;
+    font-weight: var(--fw-medium);
     font-size: clamp(1rem, 5vw, 1.25rem);
-    font-family: var(--ff-serif);
-    letter-spacing: 0.05em;
+    font-family: var(--ff-heads);
+    letter-spacing: 0.04em;
   }
 
   & nav {
@@ -399,8 +434,9 @@ header {
 .subheader > p {
   margin: 0;
   font-variant: small-caps;
-  font-size: 1rem;
-  font-family: var(--ff-serif-caption);
+  font-weight: var(--fw-medium);
+  font-size: 1.125rem;
+  font-family: var(--ff-heads);
   letter-spacing: 0.1em;
   text-align: center;
 }
@@ -442,6 +478,12 @@ footer a {
   padding: 0;
   text-decoration: underline;
   text-transform: unset;
+}
+
+footer address p {
+  font-style: normal;
+  font-weight: var(--fw-regular);
+  font-family: var(--ff-body);
 }
 
 /*
