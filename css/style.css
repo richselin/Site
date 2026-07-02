@@ -314,7 +314,7 @@ COMPONENTS
 }
 
 .separator {
-  width: clamp(3rem, 15vw, 6rem);
+  width: clamp(3rem, 15vw, 4rem);
   margin-block: 3rem;
   margin-inline: auto;
 }
@@ -342,7 +342,6 @@ header {
   & .logo {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    max-width: 288px;
     padding-inline: 0;
     padding-block: 0;
   }
@@ -360,6 +359,10 @@ header {
     grid-column: 2 / 3;
     grid-row: 1 / -1;
   }
+}
+.logo img {
+  width: 100%;
+  max-width: 288px;
 }
 
 .nav-links {
@@ -527,6 +530,10 @@ CUSTOM PAGE LAYOUTS AND STYLING
     gap: clamp(1rem, 5vw, 2rem);
     align-items: center;
   }
+}
+
+.hero img {
+  width: 100%;
 }
 
 .hero-buttons a {
